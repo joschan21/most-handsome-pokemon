@@ -3,11 +3,11 @@ import { PokemonType } from '../../shared/typings'
 import { createRouter } from './context'
 import { z } from 'zod'
 
-// random number between 0 and 500
-const getRandomPokemonId = () => Math.floor(Math.random() * 500)
+// random number between 0 and 100
+const getRandomPokemonId = () => Math.floor(Math.random() * 100)
 
-// limit number between 1 and 500
-const limitPokemonId = (id: number) => Math.max(1, Math.min(500, id))
+// limit number between 1 and 100
+const limitPokemonId = (id: number) => Math.max(1, Math.min(100, id))
 
 export const pokeRouter = createRouter()
   .query('get-random', {
@@ -57,7 +57,7 @@ export const pokeRouter = createRouter()
   .query('get-most-handsome', {
     async resolve({ ctx }) {
       const pokemon = await ctx.prisma.pokemon.findMany({
-        take: 5,
+        take: 20,
         orderBy: {
           votes: 'desc',
         },
