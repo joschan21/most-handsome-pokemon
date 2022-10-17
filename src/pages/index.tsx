@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 
           <div className='flex min-h-[15rem] items-center'>
             {pokemonList[0] && pokemonList[1] && (
-              <div className='relative grid grid-cols-2 gap-4'>
+              <div className='relative sm:grid grid-cols-2 gap-4'>
                 <button
                   type='button'
                   onClick={() =>
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
                       pokemonList[0]!.name
                     )
                   }
-                  className='rounded-md bg-blue-100 p-8 shadow'>
+                  className='rounded-md bg-blue-100 p-8 shadow w-full grid place-items-center'>
                   <h2 className='text-4xl font-bold'>{capitalize(pokemonList[0].name)}</h2>
                   <div className='relative h-32 w-32'>
                     <Image
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
                       pokemonList[1]!.name
                     )
                   }
-                  className='rounded-md bg-red-100 p-8 shadow'>
+                  className='rounded-md bg-red-100 p-8 shadow w-full grid place-items-center'>
                   <h2 className='text-4xl font-bold'>{capitalize(pokemonList[1].name)}</h2>
                   <div className='relative h-32 w-32'>
                     <Image
